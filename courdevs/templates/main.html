@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+ <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CourDevs Solutions</title>
+
+           
+
+        </head>
+
+  <body>
+
+    <div id="content">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Deliverables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Practices</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    <h2>CourDevs Development Stack:</h2>
+
+    <div class="line"></div>
+
+        <!--Python-->
+        <div class="container">
+            <div class="card">
+                <h5 class="card-header">Python</h5>
+                <div class="card-body">
+                <p class="card-text">Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace</p>
+                <a href="https://www.python.org/"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc3%2FPython-logo-notext.svg%2F1024px-Python-logo-notext.svg.png&f=1&nofb=1" height="70" width="70" alt="python.org"></a>
+                </div>
+            </div>
+        </div>
+
+    <br>
+
+   </div>
+  </body>
+
+{% endblock %}
+

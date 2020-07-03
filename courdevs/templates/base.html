@@ -1,0 +1,225 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>CourDevs Solutions</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Select Below:</p>
+
+                
+
+                <li>
+                    <a href="#python" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Python</a>
+                    <ul class="collapse list-unstyled" id="python">
+                        <li>
+                            <a href="#">TryExcept</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#javascript" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">JavaScript</a>
+                    <ul class="collapse list-unstyled" id="javascript">
+                        <li>
+                            <a href="#">Disable Fields by Checkbox</a>
+                        </li>
+                        <li>
+                            <a href="#">Color Code selection by Radiodial</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">HTML</a>
+                    <ul class="collapse list-unstyled" id="html">
+                        <li>
+                            <a href="#">FORMS html</a>
+                        </li>
+                        <li>
+                            <a href="#">TABLES html</a>
+                        </li>
+                        <li>
+                            <a href="#">SUBMIT BUTTON html</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#css" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">CSS</a>
+                    <ul class="collapse list-unstyled" id="css">
+                        <li>
+                            <a href="#">CSS notes</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Django</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Setting up Django</a>
+                        </li>
+                        <li>
+                            <a href="#">MVC Basics</a>
+                        </li>
+                        <li>
+                            <a href="#">Clone Django Project</a>
+                        </li>
+                        <li>
+                            <a href="#">Django Database (models)</a>
+                        </li>
+                        <li>
+                            <a href="#">Transport Info from models.py</a>
+                        </li>
+                        <li>
+                            <a href="#">Deployment to Heroku</a>
+                        </li>
+                        <li>
+                            <a href="#">Deployment to AWS</a>
+                        </li>
+                        <li>
+                            <a href="#">Deployment to Netlify</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#flask" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Flask</a>
+                    <ul class="collapse list-unstyled" id="flask">
+                        <li>
+                            <a href="#">Basic Structure</a>
+                        </li>
+                        <li>
+                            <a href="#">Deployment to Heroku</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#git" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Git</a>
+                    <ul class="collapse list-unstyled" id="git">
+                        <li>
+                            <a href="#">Initialize Git</a>
+                        </li>
+                        <li>
+                            <a href="#">Push to Heroku</a>
+                        </li>
+                        <li>
+                            <a href="#">Delete Git Repo</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#github" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">GitHub</a>
+                    <ul class="collapse list-unstyled" id="github">
+                        <li>
+                            <a href="#">Initial Push to Github</a>
+                        </li>
+                        <li>
+                            <a href="#">Push Existing Repo</a>
+                        </li>
+                        <li>
+                            <a href="#">.gitignore</a>
+                        </li>
+                          <li>
+                            <a href="#">GitHub Actions</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#virtualenv" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Virtualenv</a>
+                    <ul class="collapse list-unstyled" id="virtualenv">
+                        <li>
+                            <a href="#">Start Virtualenv</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                 <li>
+                    <a href="#todo" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ToDo Lists</a>
+                    <ul class="collapse list-unstyled" id="todo">
+                        <li>
+                            <a href="#">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#">Deliverables</a>
+                        </li>
+                        <li>
+                            <a href="#">Practices</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                
+                <li>
+                    <a href="#" class="article">Back to Stack</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        {% block content %}
+
+        {% endblock %}
+
+
+
+    <br>
+
+    <br><br>
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
