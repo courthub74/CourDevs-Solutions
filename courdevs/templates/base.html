@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CourDevs Oracle</title>
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -21,7 +22,9 @@
 </head>
 
 <body>
+
     <div class="wrapper">
+
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
@@ -84,7 +87,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Django</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Setting up Django</a>
+                            <a href="{% url 'setupdjango' %}">Setting up Django</a>
                         </li>
                         <li>
                             <a href="#">MVC Basics</a>
@@ -187,7 +190,7 @@
             <ul class="list-unstyled CTAs">
                 
                 <li>
-                    <a href="#" class="article">Back to Stack</a>
+                    <a href="{% url 'main' %}" class="article">Back to Stack</a>
                 </li>
             </ul>
         </nav>

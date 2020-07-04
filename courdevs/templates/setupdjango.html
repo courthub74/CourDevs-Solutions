@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+ <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         
+        </head>
+
+  <body>
+
+  	
+
+    <div id="content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Deliverables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Practices</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+      
+
+           <div class="container-fluid">
+            <div class="media">
+
+			<div class="container">
+			 <div class="media-body ml-8" >
+			    <h3 class="mt-0">Setting up <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vizteams.com%2Fwp-content%2Fuploads%2F2014%2F04%2Fdjango.png&f=1&nofb=1" height="40"  class="mr-3" alt="Django"> </h3> 
+			</div>
+
+			<br>
+
+
+			    <ol class="list-group mr-8">
+			    	<li class="list-group-item">mkdir (project)</li>
+			    	<br>
+			    	<li class="list-group-item">inside above folder, install virtualenv   (virtualenv 'venv')</li>
+			    	<br>
+			    	<li class="list-group-item">turn on virtualenv  (. venv/Scripts/activate)</li>
+			    	<br>
+			    	<li class="list-group-item">while in virtualenv, install django  (pip install django)</li>
+			    	<br>
+			    	<li class="list-group-item">create a project (django-admin.py startproject 'project name')
+						<br><small>NOTE: if not working try without .py</small></li>
+						<br>
+			    	<li class="list-group-item">open text editor and attach the folder to it</li>
+			    	<br>
+			    	<li class="list-group-item">in your (project) folder runserver: python manage.py runserver</li>
+			    	<br>
+			    	<li class="list-group-item">then in same folder: python manage.py migrate (creates admin screen)</li>
+			    	<br>
+			    	<li class="list-group-item">then in same folder: python manage.py createsuperuser( if doesn't work use: winpty python manage.py createsuperuser )</li>
+			    	<br>
+			    	<li class="list-group-item">set up user name and password</li>
+			   
+			    	<div class="line"></div>
+
+
+			    	<h5 class="mt-0">Start App:</h5>
+			    	<br>
+			    	<li>then in same folder: python manage.py startapp (newapp) <br> <small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
+			    	<br>
+			    	<li>in your new app folder create a 'urls.py' file</li>
+			    	<br>
+			    	<li>in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'</li>
+			    	<br>
+			    	<li>in (newapp) urls.py add the bear bones: <br><small><b>from django.urls import path <br> urlpatterns = [ <br><br> ]</b></small></li>
+			    	<br>
+			    	<li>create a VIEW or VIEWS:  <br>the views.py is created automatically in your (newapp)  <br> to create a view is similar to creating a new page in <br> flask, with a function. so for basic home page you would do: 
+			    		<br><small><b>def home(request):   <--pass a request thru function because the browser is requesting that a page be shown<br> return render(request, "home.html", {})</b></small><br><small>FOR EACH PAGE ON YOUR SITE YOU CREATE ONE OF THESE! <br> about me | about them | next page | etc.</small></li>
+			    			<br>
+			    	<li>create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files</li>
+			    	<br>
+			    	<li>layout the desired html files that you created in VIEWS</li>
+			    	<br>
+			    	<li>go to (newapp) urls.py, import all from views and add the paths for each view: <br> example:<br><small><b>from django.urls import path
+				from . import views <br>
+				urlpatterns = [ <br>
+					path('', views.home, name='home'), <br>
+					path('about/', views.about, name='about'), <br>]</b></small></li>
+					<br>
+			    	<li>NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
+
+						exemple:<br>
+						
+							<small><b>from django.contrib import admin <br>
+							from django.urls import path, include <br>
+							
+
+							urlpatterns = [ <br>
+								path('admin/', admin.site.urls), <br>
+								path('', include('newapp.urls')), <br>
+							]</b></small></li>
+							<br>
+			    	<li>NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
+
+							exemple:<br>
+							
+								<small><b>from django.urls import path <br>
+								from . import views <br>
+
+								urlpatterns = [ <br>
+									path('', views.home, name='home'), <br>
+									path('about/', views.about, name='about'), <br>
+									path('newpage/', views.newpage, name='newpage'), <br>
+								]</b></small></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    	<li></li>
+			    </ol>
+			  </div>
+           </div>
+
+       </div>
+    </div>
+ </body>
+
+{% endblock %}
