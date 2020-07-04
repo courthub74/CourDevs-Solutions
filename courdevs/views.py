@@ -9,3 +9,8 @@ def main(request):
 #DJANGO 
 def setupdjango(request):
 	return render(request, "setupdjango.html", {})
+
+
+#PROJECTS
+def projects(request):
+	return render(request, "projects.html", {})

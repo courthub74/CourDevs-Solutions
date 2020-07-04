@@ -85,28 +85,28 @@
 
 			    	<h5 class="mt-0">Start App:</h5>
 			    	<br>
-			    	<li>then in same folder: python manage.py startapp (newapp) <br> <small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
+			    	<li class="list-group-item">then in same folder: python manage.py startapp (newapp) <br> <small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
 			    	<br>
-			    	<li>in your new app folder create a 'urls.py' file</li>
+			    	<li class="list-group-item">in your new app folder create a 'urls.py' file</li>
 			    	<br>
-			    	<li>in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'</li>
+			    	<li class="list-group-item">in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'</li>
 			    	<br>
-			    	<li>in (newapp) urls.py add the bear bones: <br><small><b>from django.urls import path <br> urlpatterns = [ <br><br> ]</b></small></li>
+			    	<li class="list-group-item">in (newapp) urls.py add the bear bones: <br><small><b>from django.urls import path <br> urlpatterns = [ <br><br> ]</b></small></li>
 			    	<br>
-			    	<li>create a VIEW or VIEWS:  <br>the views.py is created automatically in your (newapp)  <br> to create a view is similar to creating a new page in <br> flask, with a function. so for basic home page you would do: 
+			    	<li class="list-group-item">create a VIEW or VIEWS:  <br>the views.py is created automatically in your (newapp)  <br> to create a view is similar to creating a new page in <br> flask, with a function. so for basic home page you would do: 
 			    		<br><small><b>def home(request):   <--pass a request thru function because the browser is requesting that a page be shown<br> return render(request, "home.html", {})</b></small><br><small>FOR EACH PAGE ON YOUR SITE YOU CREATE ONE OF THESE! <br> about me | about them | next page | etc.</small></li>
 			    			<br>
-			    	<li>create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files</li>
+			    	<li class="list-group-item">create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files</li>
 			    	<br>
-			    	<li>layout the desired html files that you created in VIEWS</li>
+			    	<li class="list-group-item">layout the desired html files that you created in VIEWS</li>
 			    	<br>
-			    	<li>go to (newapp) urls.py, import all from views and add the paths for each view: <br> example:<br><small><b>from django.urls import path
+			    	<li class="list-group-item">go to (newapp) urls.py, import all from views and add the paths for each view: <br> example:<br><small><b>from django.urls import path
 				from . import views <br>
 				urlpatterns = [ <br>
 					path('', views.home, name='home'), <br>
 					path('about/', views.about, name='about'), <br>]</b></small></li>
 					<br>
-			    	<li>NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
+			    	<li class="list-group-item">NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
 
 						exemple:<br>
 						
@@ -119,7 +119,7 @@
 								path('', include('newapp.urls')), <br>
 							]</b></small></li>
 							<br>
-			    	<li>NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
+			    	<li class="list-group-item">NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
 
 							exemple:<br>
 							
@@ -131,15 +131,27 @@
 									path('about/', views.about, name='about'), <br>
 									path('newpage/', views.newpage, name='newpage'), <br>
 								]</b></small></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
-			    	<li></li>
+								<br>
+			    	<li class="list-group-item">THEN go to views.py in (newapp) and add view: <br>
+
+							<small><b>#HOME <br>
+							def home(request): <br>
+								return render(request, "home.html", {}) <br>
+								
+							#ABOUT <br>
+							def about(request): <br>
+								return render(request, "about.html", {}) <br>
+							
+							#NEWPAGE <br>
+							def newpage(request): <br>
+								return render(request, "newpage.html", {})</b></small></li>
+								<br>
+			    	<li class="list-group-item">THEN go to templates and create the 'newpage.html'</li>
+			    	<br>
+			    	<li class="list-group-item">And So Forth ... </li>
+
+			    	<br>
+			    	
 			    </ol>
 			  </div>
            </div>
