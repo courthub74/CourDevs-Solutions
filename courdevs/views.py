@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Projects
 
 # Create your views here.
 
@@ -13,4 +14,5 @@ def setupdjango(request):
 
 #PROJECTS
 def projects(request):
-	return render(request, "projects.html", {})
+	all_projects = Projects.objects.all 
+	return render(request, "projects.html", {'all_projects': all_projects})
