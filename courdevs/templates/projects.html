@@ -4,19 +4,44 @@
 
 
 
-	
+<!-- {% if all_projects %}
+{% for stuff in all_projects %}
+
+<ul>
+	<li>{{ stuff.projects }}</li>
+</ul>
+
+
+{% endfor %}
+{% endif %} -->
+
+	{% if all_projects %}
 		<div class="container">
 			<br>
       			<table class="table table-bordered">
         			<th class="table" colspan="4">Projects To Complete</th>
+        			{% for stuff in all_projects %}
+        				{% if stuff.projectscomplete %}
+
         				<tr>
-        					<td>{{ all_projects }}</td>
+        					<td>{{ stuff.projects }}</td>
         				</tr>
 
+        				{% else %}
 
+        				<tr>
+        					<td>{{ stuff.projects }}</td>
+        				</tr>
+	        				
+	        				
 
+        				 {% endif %}
+        			{% endfor %}
         		</table>
-        </div>
+    {% endif %}
+        </div> 
+    
+
 
 
  {% endblock %}
