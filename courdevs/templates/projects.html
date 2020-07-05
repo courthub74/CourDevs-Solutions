@@ -107,7 +107,33 @@
 	.striker {
 		text-decoration: line-through;
 	}
+	.black {
+		background-color: black;
+		color: white;
+	}
+	.ivory {
+		background-color: #FFFFF0;
+		color: white;
+
+	}
 </style>
+
+
+<div class="container">
+
+		{% if messages %}
+			  {% for message in messages %}
+
+			      <div class="alert alert-dark alert-dismissable" role="alert">
+			        <button class="close" data-dismiss="alert">
+			             <sup><small>close</small></sup>
+			        </button>
+			           {{ message }}
+			      </div>
+
+			  {% endfor %}
+		{% endif %}
+
 
 	{% if all_projects %}
 		<div class="container">
@@ -139,6 +165,7 @@
     {% endif %}
         </div> 
     </div>
+  </div>
     
 
 

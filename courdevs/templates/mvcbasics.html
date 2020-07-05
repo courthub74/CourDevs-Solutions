@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <!DOCTYPE html>
+ <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         
+        </head>
+
+  <body>
+
+  	
+
+    <div id="content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Deliverables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Practices</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <style type="text/css">
+            	.tab {
+            		margin-left: 40px;
+            	}
+            	.tab80 {
+            		margin-left: 80px;
+            	}
+            </style>
+
+
+    <h2>MVC Basics:</h2>
+
+    <div class="line"></div>
+
+     <div class="container">
+    <ol class="list-group mr-8">
+			    	<li class="list-group-item"><h5>DJANGO IS MVC ARCHITECTURE</h5>
+
+												<span class="tab">M - Models: [Database] <br>
+												<span class="tab">V - Views: [Webpages] <br>
+												<span class="tab">C - Controller: [Routers (URLS)]</li>
+			    	<br>
+			    	<li class="list-group-item"><h5>MODELS.PY</h5>
+												class(models.Model):<br>
+												<span class="tab">delivs = models.CharField(max_length=200) <br>
+												<span class="tab">completeddelivs = models.BooleanField(default=False) <br>
+
+												<span class="tab">def __str__(self): <br>
+													<span class="tab">return self.delivs</li> 
+			    	<br>
+			    	<li class="list-group-item"><h5>VIEWS.PY</h5>
+													def deliverables(request):<br>
+														<span class="tab">all_delivs = Deliverables.objects.all <br>
+														<span class="tab">return render(request, 'deliverables.html', {'all_delivs': all_delivs})</li>
+			    	<br>
+
+			    		<li class="list-group-item"><h5>DELIVERABLES.HTML</h5>
+															<span class="tab">(%if all_delivs%) <br>
+
+															<span class="tab">(ul) <br>
+																<span class="tab">(%for things in all_delivs%) <br>
+																	<span class="tab80">(li)(( all_delivs ))(li) --All Objects in the Deliverables Table--<br>
+																	<span class="tab80">(li)(( things.delivs )) | (( things.completeddelivs ))(li) --Breaks those
+																	objects down by rendering directly from models.py--<br>
+																<span class="tab">(%endfor%)<br>
+															<span class="tab">(ul)</li>
+			    	
+			    	<br>
+			    </div>
+			    </div>
+
+	</div>
+
+{% endblock %}

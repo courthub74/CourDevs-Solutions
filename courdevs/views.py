@@ -13,6 +13,10 @@ def main(request):
 def setupdjango(request):
 	return render(request, "setupdjango.html", {})
 
+#MVC BASICS
+def mvcbasics(request):
+	return render(request, "mvcbasics.html", {}) 
+
 
 #PROJECTSentry
 def projects(request):
