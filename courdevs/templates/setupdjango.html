@@ -45,15 +45,17 @@
                 </div>
             </nav>
 
+            <div class="media-body ml-8" >
+			    <h3 class="mt-0">Setting up <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vizteams.com%2Fwp-content%2Fuploads%2F2014%2F04%2Fdjango.png&f=1&nofb=1" height="40"  class="mr-3" alt="Django"> </h3> 
+			</div>
+			<div class="line"></div>
       
 
            <div class="container-fluid">
             <div class="media">
 
 			<div class="container">
-			 <div class="media-body ml-8" >
-			    <h3 class="mt-0">Setting up <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vizteams.com%2Fwp-content%2Fuploads%2F2014%2F04%2Fdjango.png&f=1&nofb=1" height="40"  class="mr-3" alt="Django"> </h3> 
-			</div>
+
 
 			<br>
 
@@ -83,72 +85,116 @@
 			    	<div class="line"></div>
 
 
+			    	<style type="text/css">
+			    		.tab {
+			    			margin-left: 40px;
+			    		}
+			    		.tab80 {
+			    			margin-left: 80px;
+			    		}
+			    		.tab120 {
+			    			margin-left: 120px;
+			    		}
+			    	</style>
+
+
 			    	<h5 class="mt-0">Start App:</h5>
 			    	<br>
-			    	<li class="list-group-item">then in same folder: python manage.py startapp (newapp) <br> <small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
+			    	<li class="list-group-item">then in same folder: python manage.py startapp (newapp) <br>
+			    	<span class="tab"><small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
 			    	<br>
 			    	<li class="list-group-item">in your new app folder create a 'urls.py' file</li>
 			    	<br>
 			    	<li class="list-group-item">in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'</li>
 			    	<br>
-			    	<li class="list-group-item">in (newapp) urls.py add the bear bones: <br><small><b>from django.urls import path <br> urlpatterns = [ <br><br> ]</b></small></li>
+			    	<li class="list-group-item">in (newapp) urls.py add the bear bones: <br>
+			    		<br><span class="tab"><b>from django.urls import path</span> 
+			    		<br><span class="tab">urlpatterns = [ </span>
+			    			<br><br><span class="tab"> ]</span></b></li>
 			    	<br>
-			    	<li class="list-group-item">create a VIEW or VIEWS:  <br>the views.py is created automatically in your (newapp)  <br> to create a view is similar to creating a new page in <br> flask, with a function. so for basic home page you would do: 
-			    		<br><small><b>def home(request):   <--pass a request thru function because the browser is requesting that a page be shown<br> return render(request, "home.html", {})</b></small><br><small>FOR EACH PAGE ON YOUR SITE YOU CREATE ONE OF THESE! <br> about me | about them | next page | etc.</small></li>
+			    	<li class="list-group-item">create a VIEW or VIEWS:  
+			    		<br>
+			    		<br><span class="tab">the views.py is created automatically in your (newapp)  
+			    		<br><span class="tab">to create a view is similar to creating a new page in 
+			    		<br><span class="tab">flask, with a function. so for basic home page you would do: 
 			    			<br>
-			    	<li class="list-group-item">create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files</li>
+
+			    		<br><span class="tab80"><b>def home(request):</b>   <--pass a request thru function because the browser is requesting that a page be shown<br><span class="tab80"><b>return render(request, "home.html", {})</b><br>
+			    			<br>
+			    		<span class="tab80"><small>FOR EACH PAGE ON YOUR SITE YOU CREATE ONE OF THESE!<br> 
+			    			<span class="tab80">about me | about them | next page | etc.</small></li>
+			    			<br>
+			    	<li class="list-group-item">create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files <br>
+			    	                             and layout the desired html files that you created in VIEWS</li>
 			    	<br>
-			    	<li class="list-group-item">layout the desired html files that you created in VIEWS</li>
-			    	<br>
-			    	<li class="list-group-item">go to (newapp) urls.py, import all from views and add the paths for each view: <br> example:<br><small><b>from django.urls import path
-				from . import views <br>
-				urlpatterns = [ <br>
-					path('', views.home, name='home'), <br>
-					path('about/', views.about, name='about'), <br>]</b></small></li>
-					<br>
+
+			    	<li class="list-group-item">go to (newapp) urls.py, import all from views and add the paths for each view: <br><br> example:
+			    		<br>
+			    		<br><span class="tab"><b>from django.urls import path from . import views <br>
+			    			<br>
+											<span class="tab80">urlpatterns = [ <br>
+												<span class="tab120">path('', views.home, name='home'), <br>
+												<span class="tab120">path('about/', views.about, name='about'), <br><span class="tab120">]</b></li>
+												<br>
+
 			    	<li class="list-group-item">NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
-
+			    		<br>
 						exemple:<br>
-						
-							<small><b>from django.contrib import admin <br>
-							from django.urls import path, include <br>
-							
 
-							urlpatterns = [ <br>
-								path('admin/', admin.site.urls), <br>
-								path('', include('newapp.urls')), <br>
-							]</b></small></li>
+						 <br>
+
+							<span class="tab"><b>from django.contrib import admin <br>
+							<span class="tab">from django.urls import path, include <br>
+							
 							<br>
+
+							<span class="tab80">urlpatterns = [ <br>
+
+								<span class="tab120">path('admin/', admin.site.urls), <br>
+								<span class="tab120">path('', include('newapp.urls')), <br>
+							<span class="tab120">]</b></li>
+							<br>
+
+
 			    	<li class="list-group-item">NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
 
 							exemple:<br>
-							
-								<small><b>from django.urls import path <br>
-								from . import views <br>
-
-								urlpatterns = [ <br>
-									path('', views.home, name='home'), <br>
-									path('about/', views.about, name='about'), <br>
-									path('newpage/', views.newpage, name='newpage'), <br>
-								]</b></small></li>
+								<br>
+								<span class="tab"><b>from django.urls import path <br>
+								<span class="tab">from . import views <br>
+									<br>
+								<span class="tab80">urlpatterns = [ <br>
+									<span class="tab120">path('', views.home, name='home'), <br>
+									<span class="tab120">path('about/', views.about, name='about'), <br>
+									<span class="tab120">path('newpage/', views.newpage, name='newpage'), <br>
+								<span class="tab120">]</b></small></li>
 								<br>
 			    	<li class="list-group-item">THEN go to views.py in (newapp) and add view: <br>
+			    			<br>
 
-							<small><b>#HOME <br>
-							def home(request): <br>
-								return render(request, "home.html", {}) <br>
+							<b>#HOME <br>
+								<br>
+							<b><span class="tab"></b>def home(request): <br>
+								<span class="tab80">return render(request, "home.html", {}) <br>
+
+								<br>
 								
 							#ABOUT <br>
-							def about(request): <br>
-								return render(request, "about.html", {}) <br>
+							<br>
+							<span class="tab">def about(request): <br>
+								<span class="tab80">return render(request, "about.html", {}) <br>
+
+								<br>
 							
 							#NEWPAGE <br>
-							def newpage(request): <br>
-								return render(request, "newpage.html", {})</b></small></li>
+							<br>
+							<span class="tab">def newpage(request): <br>
+								<span class="tab80">return render(request, "newpage.html", {})</b>
+								<br></li>
 								<br>
 			    	<li class="list-group-item">THEN go to templates and create the 'newpage.html'</li>
 			    	<br>
-			    	<li class="list-group-item">And So Forth ... </li>
+			    	<li class="list-group-item"> and So Forth ... </li>
 
 			    	<br>
 			    	
