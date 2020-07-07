@@ -42,6 +42,10 @@ def initializegit(request):
 def deletegitrepo(request):
 	return render(request, "deletegitrepo.html", {})
 
+#PUSHTOHEROKU
+def pushtoheroku(request):
+	return render(request, "pushtoheroku.html", {})
+
 ######################################################
 
 #PROJECTSentry

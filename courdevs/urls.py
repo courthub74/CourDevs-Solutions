@@ -26,5 +26,7 @@ urlpatterns = [
 	path('initializegit/', views.initializegit, name="initializegit"),
 	#DeleteGitRepo
 	path('deletegitrepo/', views.deletegitrepo, name="deletegitrepo"),
+	#PushToHeroku
+	path('pushtoheroku/', views.pushtoheroku, name="pushtoheroku"),
 
 ]
