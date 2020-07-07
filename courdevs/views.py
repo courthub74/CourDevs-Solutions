@@ -38,6 +38,10 @@ def mvcbasics(request):
 def initializegit(request):
 	return render(request, "initializegit.html", {})
 
+#DELETEGITREPO
+def deletegitrepo(request):
+	return render(request, "deletegitrepo.html", {})
+
 ######################################################
 
 #PROJECTSentry

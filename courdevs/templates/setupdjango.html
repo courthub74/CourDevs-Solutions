@@ -61,29 +61,30 @@
 
 
 			    <ol class="list-group mr-8">
-			    	<li class="list-group-item">mkdir (project)</li>
+			    	<li class="list-group-item list-group-item-secondary">Initial Setup and Installation</li>
+			    	<li class="list-group-item">mkdir (project)
 			    	<br>
-			    	<li class="list-group-item">inside above folder, install virtualenv   (virtualenv 'venv')</li>
+			    	inside above folder, install virtualenv   (virtualenv 'venv')
 			    	<br>
-			    	<li class="list-group-item">turn on virtualenv  (. venv/Scripts/activate)</li>
+			    	turn on virtualenv  (. venv/Scripts/activate)
 			    	<br>
-			    	<li class="list-group-item">while in virtualenv, install django  (pip install django)</li>
+			    	while in virtualenv, install django  (pip install django)
 			    	<br>
-			    	<li class="list-group-item">create a project (django-admin.py startproject 'project name')
-						<br><small>NOTE: if not working try without .py</small></li>
+			    	create a project (django-admin.py startproject 'project name')
+						<br><span class="tab"><small>NOTE: if not working try without .py</small>
 						<br>
-			    	<li class="list-group-item">open text editor and attach the folder to it</li>
+			    	open text editor and attach the folder to it
 			    	<br>
-			    	<li class="list-group-item">in your (project) folder runserver: python manage.py runserver</li>
+			    	in your (project) folder runserver: python manage.py runserver
 			    	<br>
-			    	<li class="list-group-item">then in same folder: python manage.py migrate (creates admin screen)</li>
+			    	then in same folder: python manage.py migrate (creates admin screen)
 			    	<br>
-			    	<li class="list-group-item">then in same folder: python manage.py createsuperuser( if doesn't work use: winpty python manage.py createsuperuser )</li>
+			    	then in same folder: python manage.py createsuperuser
+			    		<br><span class="tab"><small>NOTE: if doesn't work use: winpty python manage.py createsuperuser</small>
 			    	<br>
-			    	<li class="list-group-item">set up user name and password</li>
-			   
-			    	<div class="line"></div>
+			    	set up user name and password</li>
 
+			    	<br><br>
 
 			    	<style type="text/css">
 			    		.tab {
@@ -98,21 +99,25 @@
 			    	</style>
 
 
-			    	<h5 class="mt-0">Start App:</h5>
+			    	<li class="list-group-item list-group-item-secondary">Starting the App</li>
+			    	
+			    	<li class="list-group-item"><br>then in same folder: python manage.py startapp (newapp) <br>
+			    	<span class="tab"><small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small>
+			    	<br> <br>
+			    	in your new app folder create a 'urls.py' file
+			    	<br> <br>
+			    	in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'
+			    	<br><br><hr>
+
 			    	<br>
-			    	<li class="list-group-item">then in same folder: python manage.py startapp (newapp) <br>
-			    	<span class="tab"><small>(newapp) is the name of the newly created app included are the admin | apps | models | tests | urls | views</small></li>
-			    	<br>
-			    	<li class="list-group-item">in your new app folder create a 'urls.py' file</li>
-			    	<br>
-			    	<li class="list-group-item">in main folder(project) SETTINGS.py add the newly created app (newapp) under 'INSTALLED APPS'</li>
-			    	<br>
-			    	<li class="list-group-item">in (newapp) urls.py add the bear bones: <br>
+			    	in (newapp) urls.py add the bear bones: <br>
 			    		<br><span class="tab"><b>from django.urls import path</span> 
 			    		<br><span class="tab">urlpatterns = [ </span>
-			    			<br><br><span class="tab"> ]</span></b></li>
+			    			<br><br><span class="tab"> ]</span></b>
+			    	<br><br><hr>
+
 			    	<br>
-			    	<li class="list-group-item">create a VIEW or VIEWS:  
+			    	create a VIEW or VIEWS:  
 			    		<br>
 			    		<br><span class="tab">the views.py is created automatically in your (newapp)  
 			    		<br><span class="tab">to create a view is similar to creating a new page in 
@@ -122,22 +127,27 @@
 			    		<br><span class="tab80"><b>def home(request):</b>   <--pass a request thru function because the browser is requesting that a page be shown<br><span class="tab80"><b>return render(request, "home.html", {})</b><br>
 			    			<br>
 			    		<span class="tab80"><small>FOR EACH PAGE ON YOUR SITE YOU CREATE ONE OF THESE!<br> 
-			    			<span class="tab80">about me | about them | next page | etc.</small></li>
-			    			<br>
-			    	<li class="list-group-item">create TEMPLATES to match each VIEW: <br> inside the (newapp) folder, create a 'templates' folder for html files <br>
-			    	                             and layout the desired html files that you created in VIEWS</li>
-			    	<br>
+			    			<span class="tab80">about me | about them | next page | etc.</small>
+			    			<br><br><hr>
 
-			    	<li class="list-group-item">go to (newapp) urls.py, import all from views and add the paths for each view: <br><br> example:
+			    			<br>
+
+			    	create TEMPLATES to match each VIEW: <br><br>
+			    	inside the (newapp) folder, create a 'templates' folder for html files <br><br>
+			    	and layout the desired html files that you created in VIEWS<br><br>
+
+			    	       <br><hr><br>
+
+			    	go to (newapp) urls.py, import all from views and add the paths for each view: <br><br> example:
 			    		<br>
 			    		<br><span class="tab"><b>from django.urls import path from . import views <br>
 			    			<br>
 											<span class="tab80">urlpatterns = [ <br>
 												<span class="tab120">path('', views.home, name='home'), <br>
-												<span class="tab120">path('about/', views.about, name='about'), <br><span class="tab120">]</b></li>
-												<br>
+												<span class="tab120">path('about/', views.about, name='about'), <br><span class="tab120">]</b><br>
+												<br><hr><br>
 
-			    	<li class="list-group-item">NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
+			    	NOW go to (project) urls.py, and INCLUDE the (newapp) urls:<br>
 			    		<br>
 						exemple:<br>
 
@@ -152,11 +162,11 @@
 
 								<span class="tab120">path('admin/', admin.site.urls), <br>
 								<span class="tab120">path('', include('newapp.urls')), <br>
-							<span class="tab120">]</b></li>
-							<br>
+							<span class="tab120">]</b><br>
+							<br><hr> <br>
 
 
-			    	<li class="list-group-item">NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
+			    	NOW to add future pages just resort to (newapp) urls.py and add it in path:<br>
 
 							exemple:<br>
 								<br>
@@ -167,9 +177,9 @@
 									<span class="tab120">path('', views.home, name='home'), <br>
 									<span class="tab120">path('about/', views.about, name='about'), <br>
 									<span class="tab120">path('newpage/', views.newpage, name='newpage'), <br>
-								<span class="tab120">]</b></small></li>
-								<br>
-			    	<li class="list-group-item">THEN go to views.py in (newapp) and add view: <br>
+								<span class="tab120">]<br></b></small>
+								<br><hr><br>
+			    	THEN go to views.py in (newapp) and add view: <br>
 			    			<br>
 
 							<span class="tab"><b>#HOME <br>
@@ -189,12 +199,12 @@
 							<span class="tab">#NEWPAGE <br>
 							<br>
 							<span class="tab80">def newpage(request): <br>
-								<span class="tab120">return render(request, "newpage.html", {})</b>
-								<br></li>
-								<br>
-			    	<li class="list-group-item">THEN go to templates and create the 'newpage.html'</li>
+								<span class="tab120">return render(request, "newpage.html", {})<br></b>
+								<br><hr><br>
+								
+			    	THEN go to templates and create the 'newpage.html'<br>
 			    	<br>
-			    	<li class="list-group-item"> and So Forth ... </li>
+			    	and So Forth ... </li>
 
 			    	<br>
 			    	

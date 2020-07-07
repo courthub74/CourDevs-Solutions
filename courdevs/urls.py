@@ -24,5 +24,7 @@ urlpatterns = [
 	#GIT
 	#InitializeGit
 	path('initializegit/', views.initializegit, name="initializegit"),
+	#DeleteGitRepo
+	path('deletegitrepo/', views.deletegitrepo, name="deletegitrepo"),
 
 ]
