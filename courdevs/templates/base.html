@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CourDevs Oracle</title>
+    <title>CourDevelops Oracle</title>
 
     
 
@@ -28,7 +28,7 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>CourDevs Solutions</h3>
+                <h3>CourDevelops Solutions</h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -40,7 +40,7 @@
                     <a href="#python" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Python</a>
                     <ul class="collapse list-unstyled" id="python">
                         <li>
-                            <a href="#">TryExcept</a>
+                            <a href="{% url 'try_except' %}">TryExcept</a>
                         </li>
                     </ul>
                 </li>
@@ -131,7 +131,7 @@
                     <a href="#git" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Git</a>
                     <ul class="collapse list-unstyled" id="git">
                         <li>
-                            <a href="#">Initialize Git</a>
+                            <a href="{% url 'initializegit' %}">General Git</a>
                         </li>
                         <li>
                             <a href="#">Push to Heroku</a>
@@ -165,7 +165,11 @@
                     <a href="#virtualenv" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Virtualenv</a>
                     <ul class="collapse list-unstyled" id="virtualenv">
                         <li>
-                            <a href="#">Start Virtualenv</a>
+                            <a href="#">Install Virtualenv</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Activate Virtualenv</a>
                         </li>
                     </ul>
                 </li>

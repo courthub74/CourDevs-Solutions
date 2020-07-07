@@ -9,7 +9,20 @@ from django.contrib import messages
 def main(request):
 	return render(request, "main.html", {})
 
-#DJANGO 
+#####################################################
+
+#PYTHON
+
+#TRYEXCEPT
+def try_except(request):
+	return render(request, "try_except.html", {})
+
+
+######################################################
+
+#DJANGO
+
+#DJANGOSETUP 
 def setupdjango(request):
 	return render(request, "setupdjango.html", {})
 
@@ -17,6 +30,15 @@ def setupdjango(request):
 def mvcbasics(request):
 	return render(request, "mvcbasics.html", {}) 
 
+######################################################
+
+#GIT
+
+#INITIALIZEGIT
+def initializegit(request):
+	return render(request, "initializegit.html", {})
+
+######################################################
 
 #PROJECTSentry
 def projects(request):
@@ -53,6 +75,15 @@ def project_delete(request, list_id):
 	projects.delete()
 	messages.success(request, ('Project Has Been Deleted'))
 	return redirect ('projects')
+
+######################################################
+
+
+
+
+
+
+
 
 
 	 

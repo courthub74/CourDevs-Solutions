@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+	<div id="content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Deliverables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Practices</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <style type="text/css">
+            	.tab {
+            		margin-left: 40px;
+            	}
+            	.tab80 {
+            		margin-left: 80px;
+            	}
+            	.tab120 {
+            		margin-left: 120px;
+            	}
+            </style>
+
+
+    <h2>Try Except Example:</h2>
+
+    <div class="line"></div>
+
+    		<div class="container">
+   				 <ol class="list-group mr-8">
+			    	<li class="list-group-item"><h5>First we have a function 'div42by'</h5>
+
+												<span class="tab">def div42by(divideBy): <br>
+												<span class="tab80">return 42/ divideBy <br>
+													<br>
+												<span class="tab80">print (div42by(2))<br>
+												<span class="tab80">print (div42by(12))<br>
+												<span class="tab80">print (div42by(0))<br>
+													<br>
+												<span class="tab">#the result will be this error:
+													<br>
+												<span class="tab">#(ZeroDivisionError: division by zero)</div></li>
+												<br>
+
+												
+	<div class="line"></div>
+
+		<div class="container">
+   				 <ol class="list-group mr-8">
+   				 	<li class="list-group-item"><h5>So to Solve that add a Try/Except</h5>
+   				 									<br>
+												<span class="tab">def div42by(divideBy): <br>
+												<span class="tab80">try: <br>
+													
+												<span class="tab120">return 42/ divideBy<br>
+												<span class="tab80">except ZeroDivisionError:<br>
+													<br>
+												<span class="tab80">#('Error: You tried to divide by zero')<br>
+													
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+ <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CourDevs Solutions</title>
+
+           
+
+        </head>
+
+  <body>
+
+    <div id="content">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Deliverables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Practices</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+    <h2>Git-Git<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fterokarvinen.com%2Fwp-content%2Fuploads%2F2012%2F08%2Fgit-logo-cc-by-300x300.png&f=1&nofb=1" height="70" class="ml-4"></h2>
+
+    <div class="line"></div>
+
+
+    <div class="container-fluid">
+            <div class="media">
+			<div class="container">
+
+
+			<br>
+
+
+			    <ol class="list-group mr-8">
+
+			    	<li class="list-group-item list-group-item-secondary">Initialize Git Repository</li>
+			    	<li class="list-group-item">git config --global user.name "Your Name" <br>
+												git config --global user.email "you@youraddress.com" <br>
+												git config --global push.default matching <br>
+												git config --global alias.co checkoutgit init <br>
+												git add . <br>
+												git commit -m "message here" <br>
+												</li>
+			    	<br>
+
+			    	<li class="list-group-item list-group-item-secondary">Basic Git Commands For Git Version Control</li>
+			    	<li class="list-group-item">git init <br>
+												git add . <br>
+												git commit -m "message here" <br>
+												git status  <br>
+												git log('q' to exit) <br>								
+												git checkout(license plate- unique commit id)</li></li>
+
+					<br>
+					<li class="list-group-item list-group-item-secondary">Push from Git to GitHub</li>
+					<li class="list-group-item">git remote add origin git@github.com: courthub74/(repo name here) <br>
+												git push -u origin master <br>
+												<hr>
+												<small>If Original Add Origin is Rejected try below:<br>
+												git remote set-url origin https://github.com/courthub74/(repo name here)</small></li>
+
+					<br>
+					<li class="list-group-item list-group-item-secondary">Existing Push</li>
+					<li class="list-group-item">git status <br>
+												git add . <br>
+												git commit -m "Commit Message" <br>
+												git push origin master <br>
+												<hr>
+												<small>NOTE: if changes are made in your GitHub i.e. ReadMe commits, then perform below:</small><br>
+														git pull origin master <br>
+														<br>
+														<small>THEN perform:</small><br>
+															'git push origin master' again</li>
+
+
+
+{% endblock %}
